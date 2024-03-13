@@ -1,6 +1,8 @@
 // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}&units=imperial
 let apikey='597acadb714c2bcca1d1130d341dae5b';
 let resel=document.getElementById('result');
+// weather =Clouds,Rain,wind,snow,sunny
+let bg=document.getElementById("bg");
 
 
 function getWeatherData(city){
@@ -36,6 +38,9 @@ showweather=(watherdata)=>{
     document.getElementById('tempratorespan').innerHTML=watherdata.main.temp;
     document.getElementById('max-tempratorespan').innerHTML=watherdata.main.temp_max;
     document.getElementById('min-tempratorespan').innerHTML=watherdata.main.temp_min;
-
+   if(watherdata.weather[0].main=="Clouds"){
+   bg.style.backgroundImage="url('image/cloud.jpg')";;
+   }
+   
 
 }
