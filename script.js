@@ -38,9 +38,28 @@ showweather=(watherdata)=>{
     document.getElementById('tempratorespan').innerHTML=watherdata.main.temp;
     document.getElementById('max-tempratorespan').innerHTML=watherdata.main.temp_max;
     document.getElementById('min-tempratorespan').innerHTML=watherdata.main.temp_min;
-   if(watherdata.weather[0].main=="Clouds"){
-   bg.style.backgroundImage="url('image/cloud.jpg')";;
-   }
+//    if(watherdata.weather[0].main=="Clouds"){
+//    bg.style.backgroundImage="url('image/cloud.jpg')";;
+//    }
+let weatherinp=innerHTML=watherdata.weather[0].main;
+    switch(weatherinp){
+        case "Clouds":
+            bg.style.backgroundImage="url('image/cloud.jpg')";
+            break;
+        case "Rain":
+            bg.style.backgroundImage="url('image/rain.jpg')";
+            break;
+        case "wind":
+             bg.style.backgroundImage="url('image/winds.jpg')";
+             break; 
+        case "snow":
+             bg.style.backgroundImage="url('image/snow.jpg')";
+             break;
+        case "sunny":
+            bg.style.backgroundImage="url('image/sunny.jpg')";
+            break; 
+    }
+
    
 
 }
