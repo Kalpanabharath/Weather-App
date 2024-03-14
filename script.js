@@ -41,24 +41,38 @@ showweather=(watherdata)=>{
 //    if(watherdata.weather[0].main=="Clouds"){
 //    bg.style.backgroundImage="url('image/cloud.jpg')";;
 //    }
-let weatherinp=innerHTML=watherdata.weather[0].main;
-    switch(weatherinp){
-        case "Clouds":
+if (watherdata.main.temp>90){
+    bg.style.backgroundImage="url('image/sunny.jpg')";
+    document.getElementById('Weather').innerHTML="sunny"
+}
+else{
+    let weatherinp=innerHTML=watherdata.weather[0].main;
+    switch(true){
+        case weatherinp.includes("Cloud"):
             bg.style.backgroundImage="url('image/cloud.jpg')";
             break;
-        case "Rain":
+        case weatherinp.includes("Rain"):
             bg.style.backgroundImage="url('image/rain.jpg')";
             break;
-        case "wind":
+        case weatherinp.includes("wind"):
              bg.style.backgroundImage="url('image/winds.jpg')";
              break; 
-        case "snow":
+        case weatherinp.includes("snow"):
              bg.style.backgroundImage="url('image/snow.jpg')";
              break;
-        case "sunny":
+        case weatherinp.includes("sunny"):
             bg.style.backgroundImage="url('image/sunny.jpg')";
             break; 
+        case weatherinp.includes("Haze"):
+             bg.style.backgroundImage="url('image/snow.jpg')";
+             break;
+            
+        
     }
+
+}
+
+
 
    
 
